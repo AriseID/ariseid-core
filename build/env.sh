@@ -10,10 +10,10 @@ fi
 # Create fake Go workspace if it doesn't exist yet.
 workspace="$PWD/build/_workspace"
 root="$PWD"
-aiddir="$workspace/src/github.com/ariseid"
-if [ ! -L "$aiddir/ariseid-core" ]; then
-    mkdir -p "$aiddir"
-    cd "$aiddir"
+ethdir="$workspace/src/github.com/ariseid"
+if [ ! -L "$ethdir/ariseid-core" ]; then
+    mkdir -p "$ethdir"
+    cd "$ethdir"
     ln -s ../../../../../.ariseid-core
     cd "$root"
 fi
@@ -23,8 +23,8 @@ GOPATH="$workspace"
 export GOPATH
 
 # Run the command inside the workspace.
-cd "$aiddir/ariseid-core"
-PWD="$aiddir/ariseid-core"
+cd "$ethdir/ariseid-core"
+PWD="$ethdir/ariseid-core"
 
 # Launch the arguments with the configured environment.
 exec "$@"
